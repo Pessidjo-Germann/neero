@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:neero/constante.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -22,13 +23,13 @@ class _BodyState extends State<Body> {
               child: Column(
                 children: [
                   const SizedBox(height: 125),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "neero",
                             textScaleFactor: 3,
                             textAlign: TextAlign.left,
@@ -42,7 +43,7 @@ class _BodyState extends State<Body> {
                             "proche de tout le monde",
                             style: TextStyle(
                               fontSize: 18,
-                              color: Colors.blue[600],
+                              color: kprimaryColor,
                             ),
                           ),
                         ],
@@ -52,8 +53,8 @@ class _BodyState extends State<Body> {
                   const SizedBox(height: 100),
                   TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      contentPadding: EdgeInsets.all(8),
+                      border: const OutlineInputBorder(),
+                      contentPadding: const EdgeInsets.all(8),
                       prefixIcon: contentDrag(
                         isColumn: isColumn,
                         press: () {
@@ -73,18 +74,24 @@ class _BodyState extends State<Body> {
                       suffixIcon: Icon(Icons.remove_red_eye_sharp),
                     ),
                   ),
-                  SizedBox(height: 15),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 210.0),
-                    child: Text("Mot de passe oublié ?"),
+                  const SizedBox(height: 15),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 150.0),
+                    child: Text(
+                      "Mot de passe oublié ?",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: kprimaryColor,
+                      ),
+                    ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   SizedBox(
                     child: Container(
                         width: size.width,
                         height: size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: const Color(0xff3737a0),
+                        decoration: const BoxDecoration(
+                          color: kprimaryColor,
                           //  borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Center(
@@ -98,7 +105,7 @@ class _BodyState extends State<Body> {
                           ),
                         )),
                   ),
-                  Spacer(flex: 3),
+                  const Spacer(flex: 3),
                 ],
               ),
             ),
@@ -131,7 +138,7 @@ class contentDrag extends StatelessWidget {
           : Container(
               width: 70,
               height: 45,
-              color: const Color.fromRGBO(33, 150, 243, 1),
+              color: kprimaryColor,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -139,7 +146,7 @@ class contentDrag extends StatelessWidget {
                     "asset/icon/Flag_of_Cameroon.svg",
                     height: 22,
                   ),
-                  Icon(Icons.arrow_forward_ios),
+                  const Icon(Icons.arrow_forward_ios),
                 ],
               ),
             ),
