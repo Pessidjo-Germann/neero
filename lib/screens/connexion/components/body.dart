@@ -71,21 +71,26 @@ class _BodyState extends State<Body> {
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.all(8),
                       labelText: 'Mot de passe',
-                      suffixIcon: Icon(Icons.remove_red_eye_sharp),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 150.0),
-                    child: Text(
-                      "Mot de passe oublié ?",
-                      style: TextStyle(
-                        fontSize: 20,
+                      suffixIcon: Icon(
+                        Icons.remove_red_eye_sharp,
                         color: kprimaryColor,
                       ),
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(height: 15),
+                  const Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        "Mot de passe oublié ?",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: kprimaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 55),
                   SizedBox(
                     child: Container(
                         width: size.width,
@@ -96,7 +101,7 @@ class _BodyState extends State<Body> {
                         ),
                         child: const Center(
                           child: Text(
-                            "Continuer",
+                            "Se connecter",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 23,
@@ -105,7 +110,28 @@ class _BodyState extends State<Body> {
                           ),
                         )),
                   ),
-                  const Spacer(flex: 3),
+                  const SizedBox(height: 60),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Vous n'avez pas de compte ?",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        "S'inscrire",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: kprimaryColor,
+                        ),
+                      )
+                    ],
+                  ),
+                  const Spacer(),
                 ],
               ),
             ),
