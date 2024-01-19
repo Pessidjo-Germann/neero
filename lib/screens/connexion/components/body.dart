@@ -78,14 +78,17 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   const SizedBox(height: 15),
-                  const Row(
+                  Row(
                     children: [
-                      Spacer(),
-                      Text(
-                        "Mot de passe oublié ?",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: kprimaryColor,
+                      const Spacer(),
+                      GestureDetector(
+                        onTap: () {},
+                        child: const Text(
+                          "Mot de passe oublié ?",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: kprimaryColor,
+                          ),
                         ),
                       ),
                     ],
