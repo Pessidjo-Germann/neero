@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:neero/constante.dart';
+import 'package:neero/screens/passoword/components/passwordScreen.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -82,7 +83,10 @@ class _BodyState extends State<Body> {
                     children: [
                       const Spacer(),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, PasswordScreen.routeName);
+                        },
                         child: const Text(
                           "Mot de passe oublié ?",
                           style: TextStyle(
@@ -96,22 +100,23 @@ class _BodyState extends State<Body> {
                   const SizedBox(height: 55),
                   SizedBox(
                     child: Container(
-                        width: size.width,
-                        height: size.height * 0.05,
-                        decoration: const BoxDecoration(
-                          color: kprimaryColor,
-                          //  borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Se connecter",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 23,
-                              fontWeight: FontWeight.w600,
-                            ),
+                      width: size.width,
+                      height: size.height * 0.05,
+                      decoration: const BoxDecoration(
+                        color: kprimaryColor,
+                        //  borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Se connecter",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 23,
+                            fontWeight: FontWeight.w600,
                           ),
-                        )),
+                        ),
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 60),
                   const Row(
