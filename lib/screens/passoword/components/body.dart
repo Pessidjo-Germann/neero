@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../constante.dart';
+import '../../connexion/components/body.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({super.key});
 
   @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    bool isColumn = false;
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(left: 25, right: 25),
@@ -30,26 +37,30 @@ class Body extends StatelessWidget {
                         letterSpacing: 7,
                       ),
                     ),
-                    Text(
-                      "proche de tout le monde",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: kprimaryColor,
-                      ),
-                    ),
                   ],
                 ),
               ],
             ),
             const SizedBox(height: 100),
-            const TextField(
+            Text(
+              "Entrez le numéro de téléphone lié à votre compte",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 10),
+            TextField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                contentPadding: EdgeInsets.all(8),
-                labelText: 'Entrer votre email',
-                suffixIcon: Icon(
-                  Icons.remove_red_eye_sharp,
-                  color: kprimaryColor,
+                border: const OutlineInputBorder(),
+                contentPadding: const EdgeInsets.all(8),
+                prefixIcon: contentDrag(
+                  isColumn: isColumn,
+                  press: () {
+                    setState(() {
+                      isColumn = !isColumn;
+                    });
+                  },
                 ),
               ),
             ),
@@ -64,7 +75,7 @@ class Body extends StatelessWidget {
                 ),
                 child: const Center(
                   child: Text(
-                    "Envoyer",
+                    "Suivant",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 23,
