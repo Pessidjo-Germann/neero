@@ -132,7 +132,7 @@ class _BodyState extends State<Body> {
                       Text(
                         "S'inscrire",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: true ? 6 : 2,
                           fontWeight: FontWeight.bold,
                           color: kprimaryColor,
                         ),
